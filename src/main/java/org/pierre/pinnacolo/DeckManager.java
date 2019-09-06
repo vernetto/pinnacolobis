@@ -6,9 +6,12 @@ import java.util.Arrays;
 
 @Service
 public class DeckManager {
-    public Deck createShuffled() {
+
+    public Deck createShuffled(int repetitions) {
         Deck deck = new Deck();
-        Arrays.asList(CardValues.values()).forEach(cv -> addAll(deck, cv));
+        for (int i = 0; i < repetitions; i++ ) {
+            Arrays.asList(CardValues.values()).forEach(cv -> addAll(deck, cv));
+        }
         return deck;
     }
 

@@ -9,4 +9,12 @@ public class Card {
         this.cv = cv;
         this.seed = seed;
     }
+
+    public CardValues getCv() {
+        return cv;
+    }
+
+    public Seeds getSeed() {
+        return seed;
+    }
 }
