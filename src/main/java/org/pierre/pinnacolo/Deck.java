@@ -1,6 +1,7 @@
 package org.pierre.pinnacolo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.stream.Collectors;
@@ -27,5 +28,10 @@ public class Deck {
             manoDiCarte.add(cards.pop());
         }
         return manoDiCarte;
+    }
+
+
+    public void add(Card card) {
+        cards.add(card);
     }
 }
