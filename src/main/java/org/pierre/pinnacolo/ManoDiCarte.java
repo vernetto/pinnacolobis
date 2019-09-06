@@ -10,4 +10,7 @@ public class ManoDiCarte {
         cards.add(card);
     }
 
+    public int size() {
+        return cards.size();
+    }
 }
