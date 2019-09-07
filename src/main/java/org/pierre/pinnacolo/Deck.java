@@ -11,11 +11,14 @@ public class Deck {
     public void addCard(CardValues cv, Seeds seed) {
         Card card = new Card(cv, seed);
         cards.add(card);
+    }
 
+    public ConcurrentLinkedDeque<Card> getCards() {
+        return this.cards;
     }
 
     public int size() {
-        return cards.size();
+        return getCards().size();
     }
 
     public List<Card> findAll(CardValues cv, Seeds seed) {
@@ -25,13 +28,17 @@ public class Deck {
     public ManoDiCarte createManoDiCarte(int count) {
         ManoDiCarte manoDiCarte = new ManoDiCarte();
         for (int i  = 0 ; i < count; i++) {
-            manoDiCarte.add(cards.pop());
+            manoDiCarte.add(pop());
         }
         return manoDiCarte;
     }
 
 
     public void add(Card card) {
-        cards.add(card);
+        getCards().add(card);
+    }
+
+    public Card pop() {
+        return getCards().pop();
     }
 }

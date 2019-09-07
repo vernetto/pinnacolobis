@@ -17,7 +17,7 @@ public class Game {
     List<Team> teamList = new ArrayList<>();
     Players players = new Players();
     Deck deck;
-    Deck giacenze;
+    Deck scartate = new Deck();
 
     /**
      * initialize a game with all team members
@@ -37,6 +37,7 @@ public class Game {
         Deck deck = deckManager.createShuffled(NUMBER_OF_MAZZI);
         this.setDeck(deck);
         players.getPlayers().forEach(player -> player.setManoDiCarte(deck.createManoDiCarte(CARDS_PER_PLAYER)));
+        scartate.add(deck.pop());
     }
 
     public void setTeamList(List<Team> teamList) {
@@ -47,8 +48,8 @@ public class Game {
         this.deck = deck;
     }
 
-    public void setGiacenze(Deck giacenze) {
-        this.giacenze = giacenze;
+    public void setScartate(Deck scartate) {
+        this.scartate = scartate;
     }
 
     public List<Player> getAllPlayers() {
@@ -59,4 +60,7 @@ public class Game {
         return this.deck;
     }
 
+    public Deck getScartate() {
+        return this.scartate;
+    }
 }
