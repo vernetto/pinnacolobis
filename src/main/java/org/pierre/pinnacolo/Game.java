@@ -70,4 +70,9 @@ public class Game {
     public Player getCurrentPlayer() {
         return this.currentPlayer;
     }
+
+    public List<Move> suggestMoves() {
+        getCurrentPlayer().getManoDiCarte().findAllTrisOrPoker();
+        return null;
+    }
 }

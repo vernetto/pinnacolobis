@@ -18,8 +18,13 @@ public class Card {
         return seed;
     }
 
+
+    public String toStringPretty() {
+        return "Card{" + "cv=" + cv + ", seed=" + seed + '}';
+    }
+
     @Override
     public String toString() {
-        return "Card{" + "cv=" + cv + ", seed=" + seed + '}';
+        return cv.value + "_"  + seed.toString().charAt(0);
     }
 }
