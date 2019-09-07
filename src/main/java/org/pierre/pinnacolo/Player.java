@@ -31,6 +31,7 @@ public class Player {
         return "Player{" +
                 "email='" + email + '\'' +
                 ", id=" + id +
+                ", manoDiCarte=" + manoDiCarte +
                 '}';
     }
 }

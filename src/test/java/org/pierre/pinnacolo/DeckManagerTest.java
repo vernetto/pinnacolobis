@@ -7,7 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = AppConfig.class)
@@ -20,9 +19,9 @@ class DeckManagerTest {
     void createShuffled() {
         game.init(new String[][] { {"mamma@gmail.com", "gabri@gmail.com"}, {"elena@gmail.com", "carmen@gmail.com"}});
         Deck deck = game.getDeck();
-        assertEquals(deck.size(),  3 * 52 - 4 * 15 -1);
-        game.getAllPlayers().forEach(player -> assertTrue(player.getManoDiCarte().size() == 15));
-        assertEquals(game.getScartate().size() , 1);
+        assertEquals(3 * 52 - 4 * 15 -1, deck.size());
+        game.getAllPlayers().forEach(player -> assertEquals(15, player.getManoDiCarte().size() ));
+        assertEquals(1, game.getScartate().size());
     }
 
 }

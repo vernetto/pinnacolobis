@@ -16,6 +16,8 @@ public class Game {
 
     List<Team> teamList = new ArrayList<>();
     Players players = new Players();
+    Player currentPlayer ;
+
     Deck deck;
     Deck scartate = new Deck();
 
@@ -31,6 +33,7 @@ public class Game {
                 Player player = new Player(teamMember, index++);
                 team.addPlayer(player);
                 players.add(player);
+                if (currentPlayer == null) currentPlayer = player;
             }
             teamList.add(team);
         }
@@ -62,5 +65,9 @@ public class Game {
 
     public Deck getScartate() {
         return this.scartate;
+    }
+
+    public Player getCurrentPlayer() {
+        return this.currentPlayer;
     }
 }

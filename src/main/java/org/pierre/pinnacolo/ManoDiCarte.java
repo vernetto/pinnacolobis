@@ -1,6 +1,7 @@
 package org.pierre.pinnacolo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ManoDiCarte {
@@ -12,5 +13,13 @@ public class ManoDiCarte {
 
     public int size() {
         return cards.size();
+    }
+
+    public String toString() {
+        return cards.toString();
+    }
+
+    public void sort() {
+        cards.sort(Comparator.comparing(Card::getSeed).thenComparing(Card::getCv) );
     }
 }

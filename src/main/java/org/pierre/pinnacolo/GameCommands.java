@@ -13,15 +13,22 @@ public class GameCommands {
     @Autowired
     public GameCommands(Game game) {
         this.game = game;
-        game.init(new String[][] { {"mamma@gmail.com", "gabri@gmail.com"}, {"elena@gmail.com", "carmen@gmail.com"}});
     }
 
     @ShellMethod("Display game")
-    public void listplayers(
-            @ShellOption() String text
-    ) {
+    public void listplayers() {
         game.getAllPlayers().forEach(player -> System.out.println(player.toString()));
-        System.out.println(text);
-
     }
+
+    @ShellMethod("init")
+    public void init() {
+         game.init(new String[][] { {"mamma@gmail.com", "gabri@gmail.com"}, {"elena@gmail.com", "carmen@gmail.com"}});
+    }
+
+    @ShellMethod("displaycurrentplayer")
+    public void displaycurrentplayer() {
+        System.out.println(game.getCurrentPlayer());
+    }
+
+
 }

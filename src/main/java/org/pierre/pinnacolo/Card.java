@@ -17,4 +17,9 @@ public class Card {
     public Seeds getSeed() {
         return seed;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" + "cv=" + cv + ", seed=" + seed + '}';
+    }
 }

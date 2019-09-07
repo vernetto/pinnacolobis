@@ -30,6 +30,7 @@ public class Deck {
         for (int i  = 0 ; i < count; i++) {
             manoDiCarte.add(pop());
         }
+        manoDiCarte.sort();
         return manoDiCarte;
     }
 
