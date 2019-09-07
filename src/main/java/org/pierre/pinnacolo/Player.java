@@ -25,4 +25,12 @@ public class Player {
     public void setManoDiCarte(ManoDiCarte manoDiCarte) {
         this.manoDiCarte = manoDiCarte;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "email='" + email + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
