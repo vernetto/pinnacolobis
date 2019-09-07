@@ -17,7 +17,7 @@ class ManoDiCarteTest {
         manoDiCarte.add(new Card(CardValues.V1, Seeds.QUADRI));
         manoDiCarte.add(new Card(CardValues.V2, Seeds.QUADRI));
         manoDiCarte.add(new Card(CardValues.V3, Seeds.QUADRI));
-        List<List<Card>> result = manoDiCarte.findAllTrisOrPoker();
+        List<CardCollection> result = manoDiCarte.findAllTrisOrPoker();
         assertEquals(1, result.size());
 
     }

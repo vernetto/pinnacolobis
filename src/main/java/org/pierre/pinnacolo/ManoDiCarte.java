@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ManoDiCarte {
-    List<Card> cards = new ArrayList<>();
+    CardCollection cards = new CardCollection();
 
     public void add(Card card) {
         cards.add(card);
@@ -25,14 +25,17 @@ public class ManoDiCarte {
         cards.sort(Comparator.comparing(Card::getSeed).thenComparing(Card::getCv) );
     }
 
-    public List<List<Card>> findAllTrisOrPoker() {
-        List<List<Card>> result = new ArrayList<>();
-        List<Card> sortedList = new ArrayList(cards);
+    public List<CardCollection> findAllTrisOrPoker() {
+        List<CardCollection> result = new ArrayList<>();
+        CardCollection sortedList = new CardCollection(cards);
         sortedList.sort(Comparator.comparing(Card::getCv));
+        // TODO for some reason it doesn't return a Map<CardValues, CardCollection> !
         Map<CardValues, List<Card>> map = sortedList.stream().collect(Collectors.groupingBy(Card::getCv));
         for (List<Card> list : map.values()) {
-            if (list.size() >= 3) {
-                result.add(list);
+            CardCollection item = new CardCollection(list);
+            CardCollection nonDuplicate = item.nonDuplicates();
+            if (nonDuplicate.size() >= 3) {
+                result.add(item);
             }
         }
         return result;
