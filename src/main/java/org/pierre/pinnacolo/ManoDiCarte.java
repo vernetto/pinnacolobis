@@ -7,7 +7,18 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ManoDiCarte {
+    public ManoDiCarte(CardCollection cards) {
+        this.cards = cards;
+    }
+
+    public ManoDiCarte() {
+    }
+
     CardCollection cards = new CardCollection();
+
+    public CardCollection getCards() {
+        return cards;
+    }
 
     public void add(Card card) {
         cards.add(card);
@@ -40,6 +51,5 @@ public class ManoDiCarte {
         }
         return result;
     }
-
 
 }

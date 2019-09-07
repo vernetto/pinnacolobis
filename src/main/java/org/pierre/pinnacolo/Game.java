@@ -59,6 +59,10 @@ public class Game {
         return players.getPlayers();
     }
 
+    public Players getPlayers() {
+        return players;
+    }
+
     public Deck getDeck() {
         return this.deck;
     }

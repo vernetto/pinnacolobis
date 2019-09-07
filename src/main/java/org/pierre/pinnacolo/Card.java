@@ -2,8 +2,8 @@ package org.pierre.pinnacolo;
 
 public class Card {
 
-    private final CardValues cv;
-    private final Seeds seed;
+    private CardValues cv;
+    private Seeds seed;
 
     public Card(CardValues cv, Seeds seed) {
         this.cv = cv;
@@ -18,6 +18,16 @@ public class Card {
         return seed;
     }
 
+    public Card() {
+    }
+
+    public void setCv(CardValues cv) {
+        this.cv = cv;
+    }
+
+    public void setSeed(Seeds seed) {
+        this.seed = seed;
+    }
 
     public String toStringPretty() {
         return "Card{" + "cv=" + cv + ", seed=" + seed + '}';
