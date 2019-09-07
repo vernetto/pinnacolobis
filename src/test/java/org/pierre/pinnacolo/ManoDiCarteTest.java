@@ -28,7 +28,5 @@ class ManoDiCarteTest {
         List<CardCollection> result3 = manoDiCarte.findAllTrisOrPoker();
         assertEquals(1, result3.size());
         assertEquals(4, result3.get(0).size());
-
-
     }
 }
