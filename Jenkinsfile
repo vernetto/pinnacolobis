@@ -17,14 +17,14 @@ pipeline {
           steps {
             script {
               if (currentBuild.number % 2 == 0) {
-                echo "the current build number is even" 
-              } 
-              else { 
+                echo "the current build number is even"
+              } else {
                 echo "the build is odd" 
               }
-
             }
           }
         }
       }
     }
+  }
+}
