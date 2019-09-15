@@ -19,11 +19,17 @@ pipeline {
               if (currentBuild.number % 2 == 0) {
                 echo "the current build number is even"
               } else {
-                echo "the build is odd" 
+                echo "the build is odd"
               }
             }
+
           }
         }
+      }
+    }
+    stage('build') {
+      steps {
+        build 'myjob'
       }
     }
   }
