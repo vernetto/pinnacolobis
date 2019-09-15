@@ -13,7 +13,21 @@ pipeline {
             echo 'Hello Pierre'
           }
         }
+        stage('evenorodd') {
+          steps {
+            script {
+              if (currentBuild.number % 2 == 0) {
+
+                echo "the current build number is even" } else { echo "the build is odd" }
+              }
+
+              sh '''if (currentBuild.number % 2 == 0) {
+
+echo "the current build number is even" } else { echo "the build is odd" }
+'''
+              }
+            }
+          }
+        }
       }
     }
-  }
-}
